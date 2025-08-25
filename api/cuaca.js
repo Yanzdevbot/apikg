@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
             const data = result[0].current;
             res.json({
                 status: 200,
-                creator: '@enzoxavier'
+                creator: '@enzoxavier',
                 result: {
                     kota: lokasi.name,
                     negara: lokasi.country,
