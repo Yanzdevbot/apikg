@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
 
     res.json({
       status: true,
-      creator: '@enzoxavier'
+      creator: '@enzoxavier',
       source: url,
       result: beritaList.slice(10, 20)
     });
