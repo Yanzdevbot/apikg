@@ -81,6 +81,7 @@ const savetube = {
     return {
       status: true,
       code: 200,
+      creator: '@enzoxavier',
       result: {
         title: decrypted.title || "Unknown",
         type: format === 'mp3' ? 'audio' : 'video',
@@ -109,7 +110,7 @@ router.get('/', async (req, res) => {
       const audioResult = await savetube.download(url, 'mp3');
       return res.json({
         status: true,
-        creator: '@enzoxavier'
+        creator: '@enzoxavier',
         result: {
           title: audioResult.result.title,
           thumbnail: audioResult.result.thumbnail,
@@ -124,7 +125,7 @@ router.get('/', async (req, res) => {
       const videoResult = await savetube.download(url, '720');
       return res.json({
         status: true,
-        creator: '@enzoxavier'
+        creator: '@enzoxavier',
         result: {
           title: videoResult.result.title,
           thumbnail: videoResult.result.thumbnail,
@@ -141,6 +142,8 @@ router.get('/', async (req, res) => {
       const videoResult = await savetube.download(url, type);
       return res.json({
         status: true,
+        code: 200,
+        creator: '@enzoxavier',
         result: {
           title: videoResult.result.title,
           thumbnail: videoResult.result.thumbnail,
@@ -158,6 +161,8 @@ router.get('/', async (req, res) => {
       
       return res.json({
         status: true,
+        code: 200,
+        creator: '@enzocavier',
         result: {
           title: videoResult.result.title,
           thumbnail: videoResult.result.thumbnail,
