@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Enzo API - Fast API</title>
+  <meta name="description" content="Dokumentasi lengkap API dari Enzoxavier. Cepat, aman, dan terpercaya. Coba berbagai endpoint sekarang!">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Enzo API - Fast API">
+  <meta property="og:description" content="Dokumentasi lengkap API dari Enzoxavier. Cepat, aman, dan terpercaya!">
+  <meta property="og:image" content="https://files.catbox.moe/7vq7nb.jpg">
+  <meta property="og:url" content="https://api.enzoxavier.biz.id">
+  <meta property="og:type" content="website">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Enzoxavier API",
+    "url":"https://api.enzoxavier.biz.id",
+    "description":"Dokumentasi lengkap dan realtime dari Enzoxavier API. Aman, cepat, dan terpercaya.",
+    "publisher":{
+      "@type":"Organization",
+      "name":"Enzoxavier"
+    }
+  }
+  </script>
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Loading Dulu Rek...</div>
+    </div>
+  </div>
+
+  <!-- Menu Button -->
+  <div class="menu-btn">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <!-- Category Panel -->
+  <div class="category-panel">
+    <div class="panel-header">
+      <h3>Kategori API</h3>
+      <span class="close-btn">×</span>
+    </div>
+    <div class="category-list"></div>
+  </div>
+
+  <!-- Changelog Popup -->
+  <div class="changelog-popup" id="changelogPopup">
+    <div class="popup-content">
+      <div class="popup-header">
+        <h3>Update Terbaru</h3>
+        <span class="close-popup">×</span>
+      </div>
+      <div class="popup-body" id="changelogList"></div>
+      <div class="popup-footer">
+        <button id="markAsRead">Tandai Sudah Dibaca</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>API List</h1>
+
+    <!-- Search -->
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Cari endpoint...">
+      <i class="fas fa-search"></i>
+    </div>
+
+    <!-- Changelog Button -->
+    <div class="changelog-btn-container">
+      <button id="showChangelog" class="changelog-btn">
+        <i class="fas fa-bell"></i> Lihat Update
+        <span class="notification-badge">3</span>
+      </button>
+    </div>
+
+    <!-- Welcome -->
+    <div class="welcome-section">
+      <h2>Selamat Datang di Enzoxavier API</h2>
+      <p>List endpoint API yang lengkap yang bisa kamu gunakan.</p>
+    </div>
+
+    <!-- Statistics -->
+    <div class="statistics">
+      <div class="stat-item">
+        <i class="fas fa-network-wired"></i>
+        <span id="total-endpoints">0</span>
+        <p>Endpoints</p>
+      </div>
+      <div class="stat-item">
+        <i class="fas fa-check-circle"></i>
+        <span id="online-endpoints">0</span>
+        <p>Online</p>
+      </div>
+      <div class="stat-item">
+        <i class="fas fa-times-circle"></i>
+        <span id="offline-endpoints">0</span>
+        <p>Offline</p>
+      </div>
+    </div>
+
+    <!-- API Categories -->
+    <div id="api-categories"></div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="copyright">
+          © 2025 API Enzoxavier – Fast & Reliable API Services.
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/HansCuls" target="_blank" class="social-link">
+            <i class="fab fa-github"></i><span>GitHub</span>
+          </a>
+          <a href="https://whatsapp.com/channel/0029VawjME90bIdmb6KiSB1n" target="_blank" class="social-link">
+            <i class="fab fa-whatsapp"></i><span>WhatsApp Channel</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- API Modal -->
+  <div class="api-modal" id="apiModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle">API Tester</h3>
+        <span class="close-modal">×</span>
+      </div>
+      <div class="modal-body">
+        <div class="tester-controls">
+          <select class="tester-method">
+            <option value="GET">GET</option>
+          </select>
+          <input type="text" class="tester-url" placeholder="API Endpoint...">
+          <button class="send-btn">
+            <i class="fas fa-paper-plane"></i> Send Request
+          </button>
+        </div>
+        <div class="params-container"></div>
+        <div class="response-container">
+          <div class="response-meta">
+            <div class="response-status"></div>
+            <div class="response-time"></div>
+          </div>
+          <div class="response-output">
+            <div class="loading-indicator">
+              <div class="loading-spinner"></div>
+              <span class="loading-text">Memproses permintaan...</span>
+            </div>
+            <div class="response-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
