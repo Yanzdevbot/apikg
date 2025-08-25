@@ -421,7 +421,7 @@ const apiData = {
         {
           method: "GET",
           title: "Brat Video",
-          status: "online",
+          status: "offline",
           description: "Mengubah text ke video brat",
           endpoint: "/api/bratvid",
           parameters: [
