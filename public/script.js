@@ -421,7 +421,7 @@ const apiData = {
         {
           method: "GET",
           title: "Brat Video",
-          status: "offline",
+          status: "online",
           description: "Mengubah text ke video brat",
           endpoint: "/api/bratvid",
           parameters: [
@@ -466,7 +466,7 @@ const apiData = {
 
 const changelogData = [
      {
-        date: "26 Agustus 2025 V2",
+        date: "30 Agustus 2025 V2",
         updates: [
           "Terimakasih kepada developer dari OwnBlox API yang saya tidak tahu namanya ehe. Saya update untuk source code nya dan menambahkan satu fitur dan mem-fixs salah satu fitur. Terimakasih sekali lagi. Hormat saya: Enzoxavier"
           ]
