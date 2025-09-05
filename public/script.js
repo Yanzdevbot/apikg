@@ -57,7 +57,7 @@ const apiData = {
             title: "Removebg",
             status: "online",
             description: "Menghapus latar belakang",
-            endpoint: "/api/removbg",
+            endpoint: "/api/removebg",
             parameters: [
                 {name: "url", type: "text", placeholder: "URL Foto (contoh: https://github.com/...)"}
             ]
