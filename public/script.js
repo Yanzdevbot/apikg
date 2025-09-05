@@ -50,6 +50,19 @@ const apiData = {
             parameters: [
                 {name: "url", type: "text", placeholder: "URL TikTok (contoh: https://vm.tiktok.com/...)"}
             ]
+
+        },
+        {
+            method: "GET",
+            title: "Removebg",
+            status: "online",
+            description: "Menghapus latar belakang",
+            endpoint: "/api/removbg",
+            parameters: [
+                {name: "url", type: "text", placeholder: "URL Foto (contoh: https://github.com/...)"}
+            ]
+
+            
         },
         {
             method: "GET",
